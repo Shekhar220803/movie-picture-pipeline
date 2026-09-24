@@ -36,7 +36,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-backend-pipenv-
       - name: Install dependencies
-        run: pipenv install --dev --deploy
+        run: pipenv install --dev --skip-lock
       - name: Run lint
         run: pipenv run lint
 
@@ -63,7 +63,7 @@ jobs:
           restore-keys: |
             ${{ runner.os }}-backend-pipenv-
       - name: Install dependencies
-        run: pipenv install --dev --deploy
+        run: pipenv install --dev --skip-lock
       - name: Run tests
         run: pipenv run test
 
